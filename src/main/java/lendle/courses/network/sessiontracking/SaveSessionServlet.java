@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -33,6 +34,8 @@ public class SaveSessionServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("utf-8");
         //建立 session 並且儲存
+        HttpSession Session=request.getSession();
+        Session.setAttribute("food", "apple");
         ///////////////////////////////////////////////////////////////
         response.sendRedirect("session.jsp");
     }

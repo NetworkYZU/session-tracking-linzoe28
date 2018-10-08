@@ -35,7 +35,9 @@ public class SaveCookieServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("utf-8");
         //建立 cookie 並且儲存
-        ///////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////\
+        Cookie sessioncCookie=new Cookie("food", "fish");
+        response.addCookie(sessioncCookie);
         response.sendRedirect("cookie.jsp");
     }
 
